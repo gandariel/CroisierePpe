@@ -20,10 +20,15 @@ class DefaultController extends Controller
     {
 		$doctrine=$this->getDoctrine();
 		$entitiyManager=$doctrine->getEntityManager();
-		$repository= $entitiyManager->getRepository('MaisonLiguescroisiereBundle:bateau');
+		$repository= $entitiyManager->getRepository('MaisonLiguesCroisiereBundle:bateau');
 		$unbateau=$repository->find(1);
-		$lesbateaux=$repository->findAll();
-		return $this->render('MaisonLiguesCroisiereBundle:Default:index.html.twig',array('lesBateaux'=>$lesBateaux));
+		$lesBateaux=$repository->findAll();
+		$doctrine=$this->getDoctrine();
+		$entitiyManager=$doctrine->getEntityManager();
+		$repository= $entitiyManager->getRepository('MaisonLiguesCroisiereBundle:Liaison');
+		$uneLiaison=$repository->find(1);
+		$lesLiaisons=$repository->findAll();
+		return $this->render('MaisonLiguesCroisiereBundle:Default:index.html.twig',array('lesBateaux'=>$lesBateaux,'lesLiaisons'=>$lesLiaisons));
 	}
 	public function ajoutbateauAction()
     {

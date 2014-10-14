@@ -1,6 +1,33 @@
 {%extends 'MaisonLiguesCroisiereBundle:Default:base.html.twig'%}
 {% block corps %}
-	<h2>Accueil </h2>
+	<h2>Accueil </h2></br>
+	<h3>Liste bateau </h3>
+	<table>
+	<tr><th>nom</th></tr>
+	{%for unBateau in lesBateaux%}
+	<tr>
+		<td>{{unBateau.getNom()}}</td>
+		<td><a href="{{path('maison_ligues_croisiere_modifbateau',{id:unBateau.getId()})}}">modifier</a></td>	
+	</tr>
+	{%else%}
+<tr><td>Pas d'utilisateur trouve</td></tr>
+{%endfor%}
+	
+</table>
+<h3>Liste Liaison </h3>
+	<table>
+	<tr><th>nom</th></tr>
+	{%for uneLiaison in lesLiaisons%}
+	<tr>
+		<td>{{uneLiaison.getdistance()}}</td>
+		<td>{{uneLiaison.getlesecteur()}}</td>
+		<td>{{uneLiaison.getportdepart()}}</td>
+		<td>{{uneLiaison.getportarrive()}}</td>
+		<td><a href="{{path('maison_ligues_croisiere_modifLiaison',{id:uneLiaison.getId()})}}">modifier</a></td>	
+	</tr>
+	{%else%}
+<tr><td>Pas d'utilisateur trouve</td></tr>
+{%endfor%}
 	
 </table>	
 {%endblock%}
