@@ -1,0 +1,26 @@
+{% extends'::base.html.twig' %}
+{% block stylesheets %}
+<link href="{{asset('css/style.css')}} "rel="stylesheet" type="text/css"/>
+{% endblock %}
+{% block body %}
+<h2>Ligue de croisiere</h2>
+<div id="menu"> <!--ou la balise html5!-->
+	<ul>
+		<li><a href="{{path('maison_ligues_croisiere_homepage',{})}}">Presentation</a></li>
+		<li><a href="{{path('maison_ligues_croisiere_ajoutbateau',{})}}">ajoutbateau</a></li>
+		<li><a href="{{path('maison_ligues_croisiere_ajoutliaison',{})}}">ajoutliaison</li>
+		<li><a href="{{path('maison_ligues_croisiere_ajoutport',{})}}">ajoutport</a></li>
+		<li><a href="{{path('maison_ligues_croisiere_ajoutsecteur',{})}}">ajoutsecteur</a></li>
+		<li><a href="{{path('maison_ligues_croisiere_ajouttraversee',{})}}">ajouttraversee</a></li>
+		<li><a href="{{path('maison_ligues_croisiere_inscriptioncroisiere',{})}}">inscriptioncroisiere</a></li>
+		<li><a href="{{path('maison_ligues_croisiere_modifbateau',{})}}">modifbateau</li>
+		<li><a href="{{path('maison_ligues_croisiere_modifliaison',{})}}">modifliaison</a></li>
+		<li><a href="{{path('maison_ligues_croisiere_modifport',{})}}">modifport</a></li>
+		<li><a href="{{path('maison_ligues_croisiere_modifsecteur',{})}}">modifsecteur</a></li>
+		<li><a href="{{path('maison_ligues_croisiere_modiftraversee',{})}}">modiftraversee</a></li>
+	</ul>
+</div>
+<div id="corps">
+	{% block corps %}{% endblock %}
+</div>
+{% endblock %}

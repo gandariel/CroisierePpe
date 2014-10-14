@@ -1,0 +1,4 @@
+maison_ligues_croisiere:
+    resource: "@MaisonLiguesCroisiereBundle/Resources/config/routing.yml"
+    prefix:   /croisiere/
+

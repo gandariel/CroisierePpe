@@ -1,0 +1,36 @@
+maison_ligues_croisiere_homepage:
+    pattern:     /accueil
+    defaults: { _controller: MaisonLiguesCroisiereBundle:Default:index }
+maison_ligues_croisiere_ajoutbateau:
+    path:     /ajoutbateau
+    defaults: { _controller: MaisonLiguesCroisiereBundle:Default:ajoutbateau }
+maison_ligues_croisiere_ajoutliaison:
+    path:     /ajoutliaison
+    defaults: { _controller: MaisonLiguesCroisiereBundle:Default:ajoutliaison }
+maison_ligues_croisiere_ajoutport:
+    path:     /ajoutport
+    defaults: { _controller: MaisonLiguesCroisiereBundle:Default:ajoutport}
+maison_ligues_croisiere_ajoutsecteur:
+    path:     /ajoutsecteur
+    defaults: { _controller: MaisonLiguesCroisiereBundle:Default:ajoutsecteur}
+maison_ligues_croisiere_ajouttraversee:
+    path:     /ajouttraversee
+    defaults: { _controller: MaisonLiguesCroisiereBundle:Default:ajouttraversee }
+maison_ligues_croisiere_inscriptioncroisiere:
+    path:     /inscriptioncroisiere
+    defaults: { _controller: MaisonLiguesCroisiereBundle:Default:inscriptioncroisiere }
+maison_ligues_croisiere_modifbateau:
+    path:     /modifbateau
+    defaults: { _controller: MaisonLiguesCroisiereBundle:Default:modifbateau }
+maison_ligues_croisiere_modifliaison:
+    path:     /modifliaison 
+    defaults: { _controller: MaisonLiguesCroisiereBundle:Default:modifliaison }
+maison_ligues_croisiere_modifport:
+    path:     /modifport
+    defaults: { _controller: MaisonLiguesCroisiereBundle:Default:modifport }
+maison_ligues_croisiere_modifsecteur:
+    path:     /modifsecteur
+    defaults: { _controller: MaisonLiguesCroisiereBundle:Default:modifsecteur }
+maison_ligues_croisiere_modiftraversee:
+    path:     /modiftraversee
+    defaults: { _controller: MaisonLiguesCroisiereBundle:Default:modiftraversee}

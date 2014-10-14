@@ -1,0 +1,8 @@
+{%extends 'MaisonLiguesCroisiereBundle:Default:base.html.twig'%}
+{% block corps %}
+	<h2>Ajouter secteur</h2>
+	<form action="{{path('maison_ligues_croisiere_ajoutsecteur')}}"method="post">
+		{{form_widget(form)}}
+		<input type="submit" value="Modifier le secteur"/>
+		</form>
+{%endblock%}
