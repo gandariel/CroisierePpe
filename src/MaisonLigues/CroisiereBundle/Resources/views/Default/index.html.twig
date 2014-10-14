@@ -16,7 +16,7 @@
 </table>
 <h3>Liste Liaison </h3>
 	<table>
-	<tr><th>nom</th></tr>
+	<tr><th>distance</th><th>secteur</th><th>port depart</th><th>port arrive</th></tr>
 	{%for uneLiaison in lesLiaisons%}
 	<tr>
 		<td>{{uneLiaison.getdistance()}}</td>
@@ -30,4 +30,43 @@
 {%endfor%}
 	
 </table>	
+<h3>Liste port </h3>
+	<table>
+	<tr><th>nom</th></tr>
+	{%for unport in lesports%}
+	<tr>
+		<td>{{unport.getNom()}}</td>
+		<td><a href="{{path('maison_ligues_croisiere_modifport',{id:unport.getId()})}}">modifier</a></td>	
+	</tr>
+	{%else%}
+<tr><td>Pas d'utilisateur trouve</td></tr>
+{%endfor%}
+	
+</table>
+<h3>Liste secteur </h3>
+	<table>
+	<tr><th>nom</th></tr>
+	{%for unsecteur in lessecteurs%}
+	<tr>
+		<td>{{unsecteur.getNom()}}</td>
+		<td><a href="{{path('maison_ligues_croisiere_modifsecteur',{id:unsecteur.getId()})}}">modifier</a></td>	
+	</tr>
+	{%else%}
+<tr><td>Pas d'utilisateur trouve</td></tr>
+{%endfor%}
+	
+</table>
+<h3>Liste Traversee </h3>
+	<table>
+	<tr><th>nom</th></tr>
+	{%for unTraversee in lesTraversees%}
+	<tr>
+		<td>{{unTraversee.getNom()}}</td>
+		<td><a href="{{path('maison_ligues_croisiere_modifTraversee',{id:unTraversee.getId()})}}">modifier</a></td>	
+	</tr>
+	{%else%}
+<tr><td>Pas d'utilisateur trouve</td></tr>
+{%endfor%}
+	
+</table>
 {%endblock%}

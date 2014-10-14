@@ -28,7 +28,22 @@ class DefaultController extends Controller
 		$repository= $entitiyManager->getRepository('MaisonLiguesCroisiereBundle:Liaison');
 		$uneLiaison=$repository->find(1);
 		$lesLiaisons=$repository->findAll();
-		return $this->render('MaisonLiguesCroisiereBundle:Default:index.html.twig',array('lesBateaux'=>$lesBateaux,'lesLiaisons'=>$lesLiaisons));
+		$doctrine=$this->getDoctrine();
+		$entitiyManager=$doctrine->getEntityManager();
+		$repository= $entitiyManager->getRepository('MaisonLiguesCroisiereBundle:port');
+		$unport=$repository->find(1);
+		$lesports=$repository->findAll();
+		$doctrine=$this->getDoctrine();
+		$entitiyManager=$doctrine->getEntityManager();
+		$repository= $entitiyManager->getRepository('MaisonLiguesCroisiereBundle:secteur');
+		$unsecteur=$repository->find(1);
+		$lessecteurs=$repository->findAll();
+		$doctrine=$this->getDoctrine();
+		$entitiyManager=$doctrine->getEntityManager();
+		$repository= $entitiyManager->getRepository('MaisonLiguesCroisiereBundle:Traversee');
+		$unTraversee=$repository->find(1);
+		$lesTraversees=$repository->findAll();
+		return $this->render('MaisonLiguesCroisiereBundle:Default:index.html.twig',array('lesBateaux'=>$lesBateaux,'lesLiaisons'=>$lesLiaisons,'lesports'=>$lesports,'lessecteurs'=>$lessecteurs,'lesTraversees'=>$lesTraversees));
 	}
 	public function ajoutbateauAction()
     {
