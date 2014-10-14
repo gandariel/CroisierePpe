@@ -15,8 +15,8 @@ class PortType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom','text',array('label'=>'Saisir le nom du port:'));
-			->add('sauvegarder','submit');
+            ->add('nom','text',array('label'=>'Saisir le nom du port:'))
+			->add('sauvegarder','submit')
         ;
     }
     

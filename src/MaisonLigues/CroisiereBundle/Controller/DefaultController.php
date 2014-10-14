@@ -18,7 +18,12 @@ class DefaultController extends Controller
 {
 	public function indexAction()
     {
-		 return $this->render('MaisonLiguesCroisiereBundle:Default:index.html.twig');
+		$doctrine=$this->getDoctrine();
+		$entitiyManager=$doctrine->getEntityManager();
+		$repository= $entitiyManager->getRepository('MaisonLiguescroisiereBundle:bateau');
+		$unbateau=$repository->find(1);
+		$lesbateaux=$repository->findAll();
+		return $this->render('MaisonLiguesCroisiereBundle:Default:index.html.twig',array('lesBateaux'=>$lesBateaux));
 	}
 	public function ajoutbateauAction()
     {
