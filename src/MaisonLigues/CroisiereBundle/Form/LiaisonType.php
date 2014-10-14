@@ -17,7 +17,7 @@ class LiaisonType extends AbstractType
         $builder
             ->add('lesecteur','text',array('label'=>'Saisir l\'id du secteur:'))
 			->add('portdepart','text',array('label'=>'Saisir le port de depart:'))
-			->add('portarrive_id','text',array('label'=>'Saisir le port d\'arrive:'))
+			->add('portarrive','text',array('label'=>'Saisir le port d\'arrive:'))
 			->add('distance','text',array('label'=>'Saisir la distance:'))
 			->add('sauvegarder','submit')
 		;
