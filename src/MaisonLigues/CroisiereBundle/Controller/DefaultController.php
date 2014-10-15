@@ -83,26 +83,57 @@ class DefaultController extends Controller
 	}
 	public function inscriptioncroisiereAction()
     {
+	
         return $this->render('MaisonLiguesCroisiereBundle:Default:inscriptioncroisiere.html.twig');
 	}
 	public function modifbateauAction()
     {
-        return $this->render('MaisonLiguesCroisiereBundle:Default:modifbateau.html.twig');
+		$request = $this->get('request');
+		$id=$request->query->get('id');
+		$em = $this->getDoctrine()->getManager();
+		$repository=$em->getrepository('MaisonLiguesCroisiereBundle:bateau');
+		$unbateau=$repository->find($id);
+		$form=$this->createForm(new bateauType,$unbateau);
+		return $this->render('MaisonLiguesCroisiereBundle:Default:modifbateau.html.twig',array('form'=>$form->createView()));
 	}
 	public function modifliaisonAction()
     {
-        return $this->render('MaisonLiguesCroisiereBundle:Default:modifliaison.html.twig');
+	$request = $this->get('request');
+		$id=$request->query->get('id');
+		$em = $this->getDoctrine()->getManager();
+		$repository=$em->getrepository('MaisonLiguesCroisiereBundle:liaison');
+		$unliaison=$repository->find($id);
+		$form=$this->createForm(new liaisonType,$unliaison);
+		return $this->render('MaisonLiguesCroisiereBundle:Default:modifliaison.html.twig',array('form'=>$form->createView()));
 	}
 	public function modifportAction()
     {
-        return $this->render('MaisonLiguesCroisiereBundle:Default:modifport.html.twig');
+	$request = $this->get('request');
+		$id=$request->query->get('id');
+		$em = $this->getDoctrine()->getManager();
+		$repository=$em->getrepository('MaisonLiguesCroisiereBundle:port');
+		$unport=$repository->find($id);
+		$form=$this->createForm(new portType,$unport);
+		return $this->render('MaisonLiguesCroisiereBundle:Default:modifport.html.twig',array('form'=>$form->createView()));
 	}
 	public function modifsecteurAction()
     {
-        return $this->render('MaisonLiguesCroisiereBundle:Default:modifsecteur.html.twig');
+	$request = $this->get('request');
+		$id=$request->query->get('id');
+		$em = $this->getDoctrine()->getManager();
+		$repository=$em->getrepository('MaisonLiguesCroisiereBundle:secteur');
+		$unsecteur=$repository->find($id);
+		$form=$this->createForm(new secteurType,$unsecteur);
+		return $this->render('MaisonLiguesCroisiereBundle:Default:modifsecteur.html.twig',array('form'=>$form->createView()));
 	}
 	public function modiftraverseeAction()
     {
-        return $this->render('MaisonLiguesCroisiereBundle:Default:modiftraversee.html.twig');
+	$request = $this->get('request');
+		$id=$request->query->get('id');
+		$em = $this->getDoctrine()->getManager();
+		$repository=$em->getrepository('MaisonLiguesCroisiereBundle:traversee');
+		$untraversee=$repository->find($id);
+		$form=$this->createForm(new traverseeType,$untraversee);
+		return $this->render('MaisonLiguesCroisiereBundle:Default:modiftraversee.html.twig',array('form'=>$form->createView()));
     }
 }

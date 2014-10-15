@@ -1,1 +1,9 @@
-Hello {{ name }}!
+{%extends 'MaisonLiguesCroisiereBundle:Default:base.html.twig'%}
+{% block corps %}
+	<h2>modifier bateau</h2>
+<form action=""method="post">
+		{{form_widget(form)}}
+		<input type="submit" value="Modifier bateau"/>
+		</form>
+{%endblock%}
+
